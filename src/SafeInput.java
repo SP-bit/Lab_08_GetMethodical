@@ -150,4 +150,28 @@ public class SafeInput {
         }
         return userInput;
     }
+    public static void prettyHeader(String msg)
+    {
+        int totalWidth = 60;
+        int messageLength = msg.length(); // used google
+        int inside = totalWidth - messageLength - 6;
+        int leftInside = inside / 2;
+        for (int i = 0; i < totalWidth; i++) {
+            System.out.print("*");
+        }
+        System.out.println();
+        System.out.print("***");
+        for (int i = 0; i < leftInside; i++) {
+            System.out.print(" ");
+        }
+        System.out.print(msg);
+        for (int i = 0; i < (inside - leftInside); i++) {
+            System.out.print(" ");
+        }
+        System.out.println("***");
+        for (int i = 0; i < totalWidth; i++) {
+            System.out.print("*");
+        }
+        System.out.println();
+    }
 }

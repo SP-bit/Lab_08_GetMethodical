@@ -132,4 +132,22 @@ public class SafeInput {
         }
         return valid;
     }
+    public static String getRegExString(Scanner pipe, String prompt, String regEx)
+    {
+        String userInput = "";
+        boolean valid = false;
+
+        while (!valid) {
+            System.out.print(prompt + ": ");
+            userInput = pipe.nextLine();
+
+            if (userInput.matches(regEx))
+            {
+                valid = true;
+            } else {
+                System.out.println("Input does not match the required format. Please try again.");
+            }
+        }
+        return userInput;
+    }
 }

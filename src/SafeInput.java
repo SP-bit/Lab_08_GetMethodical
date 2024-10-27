@@ -109,5 +109,27 @@ public class SafeInput {
         }
         return userInput;
     }
-
+    public static boolean getYNConfirm(Scanner pipe, String prompt)
+    {
+        String userInput;
+        boolean valid = false;
+        while(!valid)
+        {
+            System.out.print(prompt + " (Y/N): ");
+            userInput = pipe.nextLine();
+            if(userInput.equalsIgnoreCase("Y"))
+            {
+                return true;
+            }
+            else if(userInput.equalsIgnoreCase("N"))
+            {
+                return false;
+            }
+            else
+            {
+                System.out.println("Please enter Y or N");
+            }
+        }
+        return valid;
+    }
 }

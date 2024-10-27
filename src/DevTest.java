@@ -5,7 +5,7 @@ public class DevTest {
         Scanner in = new Scanner(System.in);
 
 
-        String result = SafeInput.getNonZeroLenString(in, "Enter a non-empty string");
-        System.out.println("You entered: " + result);
+        int result = SafeInput.getRangedInt(in, "Enter your birth month", 1,12);
+        System.out.println("Your birth month is: " + result);
     }
 }

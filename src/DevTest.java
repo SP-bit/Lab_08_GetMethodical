@@ -5,7 +5,7 @@ public class DevTest {
         Scanner in = new Scanner(System.in);
 
 
-        int result = SafeInput.getRangedInt(in, "Enter your birth month", 1,12);
-        System.out.println("Your birth month is: " + result);
+        double result = SafeInput.getRangedDouble(in, "Enter the gas price", 1,7);
+        System.out.println("Your gas price is: " + result);
     }
 }

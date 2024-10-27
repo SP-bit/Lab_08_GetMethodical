@@ -82,4 +82,32 @@ public class SafeInput {
         }
         return userInput;
     }
+    public static double getRangedDouble(Scanner pipe, String prompt, double low, double high)
+    {
+        double userInput = 0;
+        boolean valid = false;
+        String trash = "";
+        while (!valid) {
+
+            System.out.print(prompt + ": ");
+            if (pipe.hasNextDouble()) {
+                userInput = pipe.nextDouble();
+                pipe.nextLine();
+                if(userInput >= low && userInput <= high)
+                {
+                    valid = true;
+                }
+                else
+                {
+                    System.out.println("Enter a valid input within the range");
+                }
+            } else {
+                trash = pipe.nextLine();
+                System.out.println("\nYou entered: " + trash);
+                System.out.println("You have to enter a valid number within the range!");
+            }
+        }
+        return userInput;
+    }
+
 }
